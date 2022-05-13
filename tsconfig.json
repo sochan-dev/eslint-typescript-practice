@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es2020",
+    "module": "esnext",
+    //今回はeslintを動かすだけでトランスパイル・バンドル・ビルドはしない。
+    //"outDir": "dist",
+    "moduleResolution": "Node",
+    "downlevelIteration": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "allowSyntheticDefaultImports": true
+  },
+  //デフォルトでは.ts .tsx .d.tsが解析される、allowJsがtrueの場合は.js .jsxも解析
+  "include": ["./src/**/*"]
+}

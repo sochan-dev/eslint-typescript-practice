@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  //extendsで必要なことは設定しているのでplugins不要
+  "plugins": [],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    //tsの推奨設定（型チェック不要のルール）
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    //共有設定のeslint-config-prettierでeslintのフォーマットルールを全て無効化＆prettierの整形にエラーを吐かせない
+    "prettier"
+  ],
+  //eslintでタイプスクリプトを解析できるようにしている。
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    // TypeScriptのLint時に参照するconfigファイルを指定
+    "project": "./tsconfig.json"
+  },
+  //共有設定と推奨設定でいろいろしてるのでとりあえず書かない。
+  //フォーマットルールはprettierに任せる。
+  "rules": {},
+  "root": true
+}
